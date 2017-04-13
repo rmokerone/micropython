@@ -50,6 +50,8 @@
 #include "genhdr/mpversion.h"
 #include "input.h"
 
+#include "modmachine.h"
+
 // Command line options, with their defaults
 STATIC bool compile_only = false;
 STATIC uint emit_opt = MP_EMIT_OPT_NONE;
@@ -181,6 +183,10 @@ STATIC char *strjoin(const char *s1, int sep_char, const char *s2) {
 STATIC int do_repl(void) {
     mp_hal_stdout_tx_str("MicroPython " MICROPY_GIT_TAG " on " MICROPY_BUILD_DATE "; "
         MICROPY_PY_SYS_PLATFORM " version\nUse Ctrl-D to exit, Ctrl-E for paste mode\n");
+    mp_hal_stdout_tx_str("OOPY Open Source Team\n");
+
+    //初始化端口
+    machine_pins_init();
 
     #if MICROPY_USE_READLINE == 1
 

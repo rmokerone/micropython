@@ -141,6 +141,7 @@ SRC_C = \
 	input.c \
 	file.c \
 	modmachine.c \
+	machine_pin.c \
 	modos.c \
 	moduos_vfs.c \
 	modtime.c \
